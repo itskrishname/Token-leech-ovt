@@ -94,7 +94,7 @@ QBIT_NAME = environ.get('QBIT_NAME', 'wznox')
 FFMPEG_NAME = environ.get('FFMPEG_NAME', 'wzeg')
 
 # ============================ REQUIRED ================================
-if not (BOT_TOKEN := environ.get('BOT_TOKEN', '8568113533:AAFgALBEFhu7BOyZ-nzXo3sUXTAXldW7tZI')):
+if not (BOT_TOKEN := environ.get('BOT_TOKEN', '7965026276:AAHhGhMmV7J8gytKNHVjBAvMOi-npJwIseM')):
     LOGGER.error('BOT_TOKEN variable is missing! Exiting now')
     exit(1)
 
@@ -142,7 +142,7 @@ if DATABASE_URL := environ.get('DATABASE_URL', 'mongodb+srv://raj:krishna@cluste
             qbit_options = qbit_opt
             LOGGER.info('QBittorrent settings imported from database.')
         conn.close()
-        BOT_TOKEN = environ.get('BOT_TOKEN', '8568113533:AAFgALBEFhu7BOyZ-nzXo3sUXTAXldW7tZI')
+        BOT_TOKEN = environ.get('BOT_TOKEN', '7965026276:AAHhGhMmV7J8gytKNHVjBAvMOi-npJwIseM')
         bot_id = BOT_TOKEN.split(':', 1)[0]
         if DATABASE_URL := environ.get('DATABASE_URL', 'mongodb+srv://raj:krishna@cluster0.eq8xrjs.mongodb.net/'):
             if not DATABASE_URL.startswith('mongodb'):
