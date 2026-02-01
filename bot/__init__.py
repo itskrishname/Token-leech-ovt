@@ -94,13 +94,13 @@ QBIT_NAME = environ.get('QBIT_NAME', 'wznox')
 FFMPEG_NAME = environ.get('FFMPEG_NAME', 'wzeg')
 
 # ============================ REQUIRED ================================
-if not (BOT_TOKEN := environ.get('BOT_TOKEN', '')):
+if not (BOT_TOKEN := environ.get('BOT_TOKEN', '8568113533:AAFgALBEFhu7BOyZ-nzXo3sUXTAXldW7tZI')):
     LOGGER.error('BOT_TOKEN variable is missing! Exiting now')
     exit(1)
 
 bot_id = BOT_TOKEN.split(':', 1)[0]
 
-if DATABASE_URL := environ.get('DATABASE_URL', ''):
+if DATABASE_URL := environ.get('DATABASE_URL', 'mongodb+srv://raj:krishna@cluster0.eq8xrjs.mongodb.net/'):
     if not DATABASE_URL.startswith('mongodb'):
         try:
             DATABASE_URL = b64decode(resub('ini|adalah|pesan|yang|sangat|rahasia', '', DATABASE_URL)).decode('utf-8')
@@ -142,9 +142,9 @@ if DATABASE_URL := environ.get('DATABASE_URL', ''):
             qbit_options = qbit_opt
             LOGGER.info('QBittorrent settings imported from database.')
         conn.close()
-        BOT_TOKEN = environ.get('BOT_TOKEN', '')
+        BOT_TOKEN = environ.get('BOT_TOKEN', '8568113533:AAFgALBEFhu7BOyZ-nzXo3sUXTAXldW7tZI')
         bot_id = BOT_TOKEN.split(':', 1)[0]
-        if DATABASE_URL := environ.get('DATABASE_URL', ''):
+        if DATABASE_URL := environ.get('DATABASE_URL', 'mongodb+srv://raj:krishna@cluster0.eq8xrjs.mongodb.net/'):
             if not DATABASE_URL.startswith('mongodb'):
                 try:
                     DATABASE_URL = b64decode(resub('ini|adalah|pesan|rahasia', '', DATABASE_URL)).decode('utf-8')
@@ -155,19 +155,19 @@ if DATABASE_URL := environ.get('DATABASE_URL', ''):
 else:
     config_dict = {}
 
-if OWNER_ID := environ.get('OWNER_ID', '1094941160'):
+if OWNER_ID := environ.get('OWNER_ID', '7660990923'):
     OWNER_ID = int(OWNER_ID)
 else:
     LOGGER.error('OWNER_ID variable is missing! Exiting now')
     exit(1)
 
-if TELEGRAM_API := environ.get('TELEGRAM_API', '24324274'):
+if TELEGRAM_API := environ.get('TELEGRAM_API', '28891870'):
     TELEGRAM_API = int(TELEGRAM_API)
 else:
     LOGGER.error('TELEGRAM_API variable is missing! Exiting now')
     exit(1)
 
-if not (TELEGRAM_HASH := environ.get('TELEGRAM_HASH', '9702205c640fbca462e5e583298cce74')):
+if not (TELEGRAM_HASH := environ.get('TELEGRAM_HASH', 'ffc3794690bf254d2867ac58fd293a60')):
     LOGGER.error('TELEGRAM_HASH variable is missing! Exiting now')
     exit(1)
 
@@ -192,7 +192,7 @@ if AUTHORIZED_CHATS := environ.get('AUTHORIZED_CHATS', ''):
     for id_ in aid:
         user_data[int(id_.strip())] = {'is_auth': True}
 
-if SUDO_USERS := environ.get('SUDO_USERS', ''):
+if SUDO_USERS := environ.get('SUDO_USERS', '1194055465'):
     aid = SUDO_USERS.split()
     for id_ in aid:
         user_data[int(id_.strip())] = {'is_sudo': True}
