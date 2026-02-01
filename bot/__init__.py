@@ -272,20 +272,20 @@ RCLONE_TFSIMULATION = int(environ.get('RCLONE_TFSIMULATION', '8'))
             
 # ============================== LOGS ==================================
 ONCOMPLETE_LEECH_LOG = environ.get('ONCOMPLETE_LEECH_LOG', 'True').lower() == 'true'
-LEECH_LOG = environ.get('LEECH_LOG', '')
+LEECH_LOG = environ.get('LEECH_LOG', '-1003446598614')
 if LEECH_LOG:
     if LEECH_LOG.isdigit() or LEECH_LOG.startswith('-'):
         LEECH_LOG = int(LEECH_LOG)
 else:
     ENABLE_STREAM_LINK = False
 
-MIRROR_LOG = environ.get('MIRROR_LOG', '')
+MIRROR_LOG = environ.get('MIRROR_LOG', '-1003446598614')
 MIRROR_LOG = int(MIRROR_LOG) if MIRROR_LOG.isdigit() or MIRROR_LOG.startswith('-') else MIRROR_LOG
 
-OTHER_LOG = environ.get('OTHER_LOG', '')
+OTHER_LOG = environ.get('OTHER_LOG', '-1003446598614')
 OTHER_LOG = int(OTHER_LOG) if OTHER_LOG.isdigit() or OTHER_LOG.startswith('-') else OTHER_LOG
 
-LINK_LOG = environ.get('LINK_LOG', '')
+LINK_LOG = environ.get('LINK_LOG', '-1003446598614')
 LINK_LOG = int(LINK_LOG) if LINK_LOG.isdigit() or LINK_LOG.startswith('-') else LINK_LOG
 # ======================================================================
 
@@ -358,7 +358,7 @@ AUTO_MUTE_DURATION = int(environ.get('AUTO_MUTE_DURATION', 30))
 FUSERNAME = environ.get('FUSERNAME', 'False').lower() == 'true'
 # Subscribe
 FSUB = environ.get('FSUB', 'False').lower() == 'true'
-FSUB_CHANNEL_ID = int(environ.get('FSUB_CHANNEL_ID', -1001619853672))
+FSUB_CHANNEL_ID = int(environ.get('FSUB_CHANNEL_ID', ))
 FSUB_BUTTON_NAME = environ.get('FSUB_BUTTON_NAME', 'Join Channel')
 CHANNEL_USERNAME = environ.get('CHANNEL_USERNAME', 'PubleechGroup')
 # ======================================================================
@@ -455,7 +455,7 @@ UPDATE_EVERYTHING = environ.get('UPDATE_EVERYTHING', 'False').lower() == 'true'
 
 # ============================== UI ====================================
 AUTHOR_NAME = environ.get('AUTHOR_NAME', 'Searchx')
-AUTHOR_URL = environ.get('AUTHOR_URL', 'https://t.me/h_oneysingh')
+AUTHOR_URL = environ.get('AUTHOR_URL', 'https://t.me/Lord_Vasudev_Krishna')
 DRIVE_SEARCH_TITLE = environ.get('DRIVE_SEARCH_TITLE', 'Drive Search')
 GD_INFO = environ.get('GD_INFO', 'By @aspirantDiscuss')
 PROG_FINISH = environ.get('PROG_FINISH', '⬢')
@@ -483,7 +483,7 @@ BUTTON_SIX_URL = environ.get('BUTTON_SIX_URL', '')
 BASE_URL_PORT = environ.get('BASE_URL_PORT', '')
 BASE_URL_PORT = 80 if len(BASE_URL_PORT) == 0 else int(BASE_URL_PORT)
 
-BASE_URL = environ.get('BASE_URL', '').rstrip("/")
+BASE_URL = environ.get('BASE_URL', '38.248.12.52').rstrip("/")
 if len(BASE_URL) == 0:
     BASE_URL = ''
 
