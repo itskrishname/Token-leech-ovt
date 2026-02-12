@@ -30,7 +30,7 @@ async def broadcast_message(_, message: Message):
     if count:
         await editMessage(f'<i>Found {count} entry</i>', msg)
         await sleep(1)
-        await editMessage(f'<i>Sending brodcase message to {count} users, please wait...</i>', msg)
+        await editMessage(f'<i>Sending broadcast message to {count} users, please wait...</i>', msg)
         succ = fail = 0
         for user_id in users:
             if reply_to:
@@ -42,13 +42,13 @@ async def broadcast_message(_, message: Message):
                 succ += 1
             else:
                 fail += 1
-        text = ('Broadcase Message Done!\n'
+        text = ('Broadcast Message Done!\n'
                 f'<b>Time Taken:</b> {get_readable_time(time() - message.date.timestamp())}\n'
                 f'<b>Total:</b> {count}\n'
                 f'<b>Success:</b> {succ}\n'
                 f'<b>Failed:</b> {fail}')
     else:
-        text = 'Not found any user to send broadcse message!'
+        text = 'Not found any user to send broadcast message!'
     await editMessage(text, msg)
 
 

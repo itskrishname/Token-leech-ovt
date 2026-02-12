@@ -62,7 +62,7 @@ class GoFileUploader:
                 return res['data']
 
     def _upload_file(self, file, parentfolderid):
-        mpart = MultipartEncoder(fields={'file': (ospath.basename(file), open(file, 'rb'), guess_type(file)), 'token': self._token, 'folderId': parentfolderid})
+        mpart = MultipartEncoder(fields={'file': (ospath.basename(file), open(file, 'rb'), guess_type(file)[0] or 'application/octet-stream'), 'token': self._token, 'folderId': parentfolderid})
         monitor = MultipartEncoderMonitor(mpart, self._callback)
         resp = rpost(f'https://store{self._server}.gofile.io/uploadFile', data=monitor, headers={'Content-Type': monitor.content_type}).json()
         self._temp_size = self.uploaded_bytes

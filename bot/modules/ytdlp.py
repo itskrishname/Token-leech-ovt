@@ -361,7 +361,7 @@ class YtDlp(TaskListener):
             self.removeFromSameDir()
             return
 
-        options = {'usenetrc': True, 'cookiefile': 'cookies.txt'}
+        opts = {'usenetrc': True, 'cookiefile': 'cookies.txt'}
 
         opt = opt or self.user_dict.get('yt_opt') or (config_dict['YT_DLP_OPTIONS'] if 'yt_opt' not in self.user_dict else '')
 
@@ -374,10 +374,9 @@ class YtDlp(TaskListener):
                 if key == 'postprocessors':
                     continue
                 if key == 'format' and not self.select:
-                    if value.startswith("ba/b-"):
-                        qual = value
-                        continue
                     qual = value
+                    if value.startswith("ba/b-"):
+                        continue
                 if value.startswith('^'):
                     if '.' in value or value == '^inf':
                         value = float(value.split('^')[1])
@@ -389,11 +388,11 @@ class YtDlp(TaskListener):
                     value = False
                 elif value.startswith(('{', '[', '(')) and value.endswith(('}', ']', ')')):
                     value = literal_eval(value)
-                options[key] = value
-            options['playlist_items'] = '0'
+                opts[key] = value
+            opts['playlist_items'] = '0'
 
         try:
-            result = await sync_to_async(extract_info, self.link, options)
+            result = await sync_to_async(extract_info, self.link, opts)
         except Exception as e:
             e = str(e).replace('<', ' ').replace('>', ' ')
             await editMessage(f'{self.tag} {e}', self.editable)
