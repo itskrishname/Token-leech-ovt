@@ -317,7 +317,7 @@ async def load_config():
     FUSERNAME = environ.get('FUSERNAME', 'False').lower() == 'true'
     # Subscribe
     FSUB = environ.get('FSUB', 'False').lower() == 'true'
-    FSUB_CHANNEL_ID = int(environ.get('FSUB_CHANNEL_ID', -1002455211039))
+    FSUB_CHANNEL_ID = int(environ.get('FSUB_CHANNEL_ID', -1002678390634))
     FSUB_BUTTON_NAME = environ.get('FSUB_BUTTON_NAME', 'Join Channel')
     CHANNEL_USERNAME = environ.get('CHANNEL_USERNAME', 'TrollReleases')
     # ======================================================================

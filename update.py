@@ -21,11 +21,9 @@ basicConfig(format='%(asctime)s: [%(levelname)s: %(filename)s - %(lineno)d] ~ %(
             datefmt='%d-%b-%y %I:%M:%S %p',
             level=INFO)
 
-if not (BOT_TOKEN := environ.get('BOT_TOKEN', '')):
-    load_dotenv('config.env', override=False)
-    BOT_TOKEN = environ.get('BOT_TOKEN', '')
+load_dotenv('config.env', override=False)
 
-if BOT_TOKEN:
+if BOT_TOKEN := environ.get('BOT_TOKEN', ''):
     bot_id = BOT_TOKEN.split(':', 1)[0]
 else:
     log_error('BOT_TOKEN variable is missing! Exiting now')

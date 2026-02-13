@@ -45,8 +45,7 @@ LOGGER = getLogger(__name__)
 
 aria2 = ariaAPI(ariaClient(host='http://localhost', port=6800, secret=''))
 
-if not environ.get('BOT_TOKEN'):
-    load_dotenv('config.env', override=False)
+load_dotenv('config.env', override=False)
 
 Intervals = {'status': {}, 'qb': '', 'jd': ''}
 QbTorrents = {}
