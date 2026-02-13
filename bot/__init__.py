@@ -16,6 +16,7 @@ from sys import exit
 from time import sleep, time
 from tzlocal import get_localzone
 from uvloop import install
+from asyncio import new_event_loop, set_event_loop
 from pyrogram import utils as pyroutils
 pyroutils.MIN_CHAT_ID = -999999999999
 pyroutils.MIN_CHANNEL_ID = -100999999999999
@@ -24,6 +25,7 @@ pyroutils.MIN_CHANNEL_ID = -100999999999999
 # from faulthandler import enable as faulthandler_enable
 # faulthandler_enable()
 install()
+set_event_loop(new_event_loop())
 setdefaulttimeout(600)
 
 botStartTime = time()
@@ -759,7 +761,6 @@ if ospath.exists('shorteners.txt'):
 if not config_dict['ARGO_TOKEN']:
     config_dict['TORRENT_PORT'] = PORT
             
-PORT = environ.get('PORT')
 Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT} --worker-class gevent", shell=True)
 
 srun([QBIT_NAME, '-d', f'--profile={getcwd()}'], check=True)
