@@ -21,7 +21,7 @@ basicConfig(format='%(asctime)s: [%(levelname)s: %(filename)s - %(lineno)d] ~ %(
             datefmt='%d-%b-%y %I:%M:%S %p',
             level=INFO)
 
-load_dotenv('config.env', override=True)
+load_dotenv('config.env', override=False)
 
 if BOT_TOKEN := environ.get('BOT_TOKEN', ''):
     bot_id = BOT_TOKEN.split(':', 1)[0]
